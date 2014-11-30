@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>cfg</string>
+		<string>sfs</string>
+	</array>
+	<key>name</key>
+	<string>KSP configuration</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>match</key>
+			<string>//.*</string>
+			<key>name</key>
+			<string>comment</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(.*)(?==)</string>
+			<key>name</key>
+			<string>keyword</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;==)(\s*[0-9a-f]{32})</string>
+			<key>name</key>
+			<string>constant.numeric</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;==)(\s*([a-z0-9]+\-){4}[a-z0-9]+)</string>
+			<key>name</key>
+			<string>constant.numeric</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;==)(\s*True||\s*False)</string>
+			<key>name</key>
+			<string>constant.numeric</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\-?[0-9\.]+E?\-?[0-9\.]*</string>
+			<key>name</key>
+			<string>constant.numeric</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;==)(\s*NaN||\s*Infinity||\s*None)</string>
+			<key>name</key>
+			<string>constant.numeric</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;==)(\s?.*[A-Za-z].*)</string>
+			<key>name</key>
+			<string>string</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.cfg.sfs</string>
+	<key>uuid</key>
+	<string>2e22ffdc-c42e-4308-819d-c125852f1fb7</string>
+</dict>
+</plist>
