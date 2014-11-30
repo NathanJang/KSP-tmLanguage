@@ -5,7 +5,7 @@ This is a `.tmLanguage` specification for configuration files in [Kerbal Space P
 
 `KSP configuration.JSON-tmLanguage` is the JSON "source" for the specification, which can be "compiled" into the XML `.tmLanguage` type with [AAAPackageDev](https://github.com/SublimeText/AAAPackageDev). All the work is done in the JSON, so it includes comments.
 
-To use with Sublime Text select Sublime Text Preferences -> Browse Packages... in Sublime Text, and copy `KSP configuration.tmLanguage` to `Packages/User/`.
+To use with Sublime Text select Sublime Text Preferences -> Browse Packages... in Sublime Text, and copy `KSP configuration.tmLanguage` to `Packages/User/`. It is also available under [Package Control](https://sublime.wbond.net/).
 
 [Here's how it looks.](http://i.imgur.com/AZNdorq.png)
 
