@@ -12,52 +12,92 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>comment</key>
+			<string>Anything after 2 slashes is a comment.</string>
 			<key>match</key>
 			<string>//.*</string>
 			<key>name</key>
 			<string>comment</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>Anything before an equal sign is a key in the key-value pairs.</string>
 			<key>match</key>
-			<string>(.*)(?==)</string>
+			<string>([A-Za-z0-9%@_\s]*)(?==)</string>
 			<key>name</key>
 			<string>keyword</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>32 hexadecimal characters after an equal sign is a pid.</string>
 			<key>match</key>
 			<string>(?&lt;==)(\s*[0-9a-f]{32})</string>
 			<key>name</key>
 			<string>constant.numeric</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>Alphanumeric characters split by 4 hyphens after an equal sign is a guid.</string>
 			<key>match</key>
 			<string>(?&lt;==)(\s*([a-z0-9]+\-){4}[a-z0-9]+)</string>
 			<key>name</key>
 			<string>constant.numeric</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>'True' or 'False' after an equal sign is a boolean.</string>
 			<key>match</key>
 			<string>(?&lt;==)(\s*True||\s*False)</string>
 			<key>name</key>
 			<string>constant.numeric</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>Numeric characters after an equal sign, including scientific notation, is a number.</string>
 			<key>match</key>
-			<string>\-?[0-9\.]+E?\-?[0-9\.]*</string>
+			<string>(?&lt;=[=\,\(])(\s*\-?[0-9\.]+E?\-?[0-9\.]*)</string>
 			<key>name</key>
 			<string>constant.numeric</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>'NaN', 'Infinity', or 'None' after an equal sign is a non-numeric constant.</string>
 			<key>match</key>
 			<string>(?&lt;==)(\s*NaN||\s*Infinity||\s*None)</string>
 			<key>name</key>
 			<string>constant.numeric</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>Anything else after an equal sign containing alphabetical characters is a string.</string>
 			<key>match</key>
 			<string>(?&lt;==)(\s?.*[A-Za-z].*)</string>
 			<key>name</key>
 			<string>string</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Alphanumeric characters inside square brackets is a parameter.</string>
+			<key>match</key>
+			<string>(?&lt;=\[)([A-Za-z0-9]*)(?=\])</string>
+			<key>name</key>
+			<string>variable.parameter</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Alphanumeric characters after a colon is a function.</string>
+			<key>match</key>
+			<string>(?&lt;=:)([A-Za-z0-9]*)</string>
+			<key>name</key>
+			<string>support.function</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Anything else matching these symbols is a class name.</string>
+			<key>match</key>
+			<string>[A-Za-z0-9/!@%]*</string>
+			<key>name</key>
+			<string>entity.name.class</string>
 		</dict>
 	</array>
 	<key>scopeName</key>

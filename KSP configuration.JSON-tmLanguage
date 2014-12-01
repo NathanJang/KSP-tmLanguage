@@ -6,44 +6,59 @@
     "uuid": "2e22ffdc-c42e-4308-819d-c125852f1fb7",
     "patterns": [
         {
-            // Anything after 2 slashes is a comment.
             "name": "comment",
-            "match": "//.*"
+            "match": "//.*",
+            "comment": "Anything after 2 slashes is a comment."
         },
         {
-            // Anything before an equal sign is a key in the key-value pairs.
             "name": "keyword",
-            "match": "(.*)(?==)"
+            "match": "([A-Za-z0-9%@_\\s]*)(?==)",
+            "comment": "Anything before an equal sign is a key in the key-value pairs."
         },
         {
-            // 32 hexadecimal characters after an equal sign is a pid.
             "name": "constant.numeric",
-            "match": "(?<==)(\\s*[0-9a-f]{32})"
+            "match": "(?<==)(\\s*[0-9a-f]{32})",
+            "comment": "32 hexadecimal characters after an equal sign is a pid."
         },
         {
-            // Alphanumeric characters split by 4 hyphens after an equal sign is a guid.
             "name": "constant.numeric",
-            "match": "(?<==)(\\s*([a-z0-9]+\\-){4}[a-z0-9]+)"
+            "match": "(?<==)(\\s*([a-z0-9]+\\-){4}[a-z0-9]+)",
+            "comment": "Alphanumeric characters split by 4 hyphens after an equal sign is a guid."
         },
         {
-            // "True" or "False" after an equal sign is a boolean.
             "name": "constant.numeric",
-            "match": "(?<==)(\\s*True||\\s*False)"
+            "match": "(?<==)(\\s*True||\\s*False)",
+            "comment": "'True' or 'False' after an equal sign is a boolean."
         },
         {
-            // Numeric characters after an equal sign, including scientific notation, is a number.
             "name": "constant.numeric",
-            "match": "\\-?[0-9\\.]+E?\\-?[0-9\\.]*"
+            "match": "(?<=[=\\,\\(])(\\s*\\-?[0-9\\.]+E?\\-?[0-9\\.]*)",
+            "comment": "Numeric characters after an equal sign, including scientific notation, is a number."
         },
         {
-            // "NaN", "Infinity", or "None" after an equal sign is a non-numeric constant.
             "name": "constant.numeric",
-            "match": "(?<==)(\\s*NaN||\\s*Infinity||\\s*None)"
+            "match": "(?<==)(\\s*NaN||\\s*Infinity||\\s*None)",
+            "comment": "'NaN', 'Infinity', or 'None' after an equal sign is a non-numeric constant."
         },
         {
-            // Anything else containing alphabetical characters is a string.
             "name": "string",
-            "match": "(?<==)(\\s?.*[A-Za-z].*)"
+            "match": "(?<==)(\\s?.*[A-Za-z].*)",
+            "comment": "Anything else after an equal sign containing alphabetical characters is a string."
+        },
+        {
+            "name": "variable.parameter",
+            "match": "(?<=\\[)([A-Za-z0-9]*)(?=\\])",
+            "comment": "Alphanumeric characters inside square brackets is a parameter."
+        },
+        {
+            "name": "support.function",
+            "match": "(?<=:)([A-Za-z0-9]*)",
+            "comment": "Alphanumeric characters after a colon is a function."
+        },
+        {
+            "name": "entity.name.class",
+            "match": "[A-Za-z0-9/!@%]*",
+            "comment": "Anything else matching these symbols is a class name."
         }
     ]
 }

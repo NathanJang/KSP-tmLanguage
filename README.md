@@ -7,6 +7,6 @@ This is a `.tmLanguage` specification for configuration files in [Kerbal Space P
 
 To use with Sublime Text select Sublime Text Preferences -> Browse Packages... in Sublime Text, and copy `KSP configuration.tmLanguage` to `Packages/User/`. It is also available under [Package Control](https://sublime.wbond.net/).
 
-[Here's how it looks.](http://i.imgur.com/AZNdorq.png)
+[Here's how it looks.](http://i.imgur.com/8RN3o4g.png)
 
 I am quite new to regex so I welcome suggestions. It's far from complete.
