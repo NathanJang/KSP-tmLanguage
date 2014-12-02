@@ -23,7 +23,7 @@
 			<key>comment</key>
 			<string>Anything before an equal sign is a key in the key-value pairs.</string>
 			<key>match</key>
-			<string>([A-Za-z0-9%@_\s]*)(?==)</string>
+			<string>([A-Za-z0-9@%_]*\s*)(?==)</string>
 			<key>name</key>
 			<string>keyword</string>
 		</dict>
@@ -47,15 +47,15 @@
 			<key>comment</key>
 			<string>'True' or 'False' after an equal sign is a boolean.</string>
 			<key>match</key>
-			<string>(?&lt;==)(\s*True||\s*False)</string>
+			<string>(?&lt;==)(\s*[Tt]rue||\s*[Ff]alse)</string>
 			<key>name</key>
 			<string>constant.numeric</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>Numeric characters after an equal sign, including scientific notation, is a number.</string>
+			<string>Numeric characters, including scientific notation, is a number.</string>
 			<key>match</key>
-			<string>(?&lt;=[=\,\(])(\s*\-?[0-9\.]+E?\-?[0-9\.]*)</string>
+			<string>\s*-?[0-9\.]+E?-?[0-9\.]*</string>
 			<key>name</key>
 			<string>constant.numeric</string>
 		</dict>
@@ -95,7 +95,7 @@
 			<key>comment</key>
 			<string>Anything else matching these symbols is a class name.</string>
 			<key>match</key>
-			<string>[A-Za-z0-9/!@%]*</string>
+			<string>[A-Za-z0-9!@%/]*</string>
 			<key>name</key>
 			<string>entity.name.class</string>
 		</dict>

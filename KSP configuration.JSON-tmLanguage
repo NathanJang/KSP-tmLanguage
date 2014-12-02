@@ -12,7 +12,7 @@
         },
         {
             "name": "keyword",
-            "match": "([A-Za-z0-9%@_\\s]*)(?==)",
+            "match": "([A-Za-z0-9@%_]*\\s*)(?==)",
             "comment": "Anything before an equal sign is a key in the key-value pairs."
         },
         {
@@ -27,13 +27,13 @@
         },
         {
             "name": "constant.numeric",
-            "match": "(?<==)(\\s*True||\\s*False)",
+            "match": "(?<==)(\\s*[Tt]rue||\\s*[Ff]alse)",
             "comment": "'True' or 'False' after an equal sign is a boolean."
         },
         {
             "name": "constant.numeric",
-            "match": "(?<=[=\\,\\(])(\\s*\\-?[0-9\\.]+E?\\-?[0-9\\.]*)",
-            "comment": "Numeric characters after an equal sign, including scientific notation, is a number."
+            "match": "\\s*-?[0-9\\.]+E?-?[0-9\\.]*",
+            "comment": "Numeric characters, including scientific notation, is a number."
         },
         {
             "name": "constant.numeric",
@@ -57,7 +57,7 @@
         },
         {
             "name": "entity.name.class",
-            "match": "[A-Za-z0-9/!@%]*",
+            "match": "[A-Za-z0-9!@%/]*",
             "comment": "Anything else matching these symbols is a class name."
         }
     ]
