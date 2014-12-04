@@ -1,8 +1,8 @@
 // [PackageDev] target_format: plist, ext: tmLanguage
 {
     "name": "KSP configuration",
-    "scopeName": "text.cfg.sfs",
-    "fileTypes": ["cfg", "sfs"],
+    "scopeName": "text.cfg.craft.sfs",
+    "fileTypes": ["cfg", "craft", "sfs"],
     "uuid": "2e22ffdc-c42e-4308-819d-c125852f1fb7",
     "patterns": [
         {

@@ -5,6 +5,7 @@
 	<key>fileTypes</key>
 	<array>
 		<string>cfg</string>
+		<string>craft</string>
 		<string>sfs</string>
 	</array>
 	<key>name</key>
@@ -101,7 +102,7 @@
 		</dict>
 	</array>
 	<key>scopeName</key>
-	<string>text.cfg.sfs</string>
+	<string>text.cfg.craft.sfs</string>
 	<key>uuid</key>
 	<string>2e22ffdc-c42e-4308-819d-c125852f1fb7</string>
 </dict>
