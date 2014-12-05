@@ -11,8 +11,18 @@
             "comment": "Anything after 2 slashes is a comment."
         },
         {
+            "name": "variable.parameter",
+            "match": "(?<=[!\\[])([A-Za-z0-9\\*]*)(?=\\])",
+            "comment": "Alphanumeric characters inside square brackets is a parameter."
+        },
+        {
+            "name": "support.function",
+            "match": "([!@%])(?=[A-Za-z]*)",
+            "comment": "These symbols before alphabetical characters are for ModuleManager syntax."
+        },
+        {
             "name": "keyword",
-            "match": "([A-Za-z0-9@%_]*\\s*)(?==)",
+            "match": "([A-Za-z0-9@%_,]*\\s*)(?=([\\*\\+])?=)",
             "comment": "Anything before an equal sign is a key in the key-value pairs."
         },
         {
@@ -27,17 +37,17 @@
         },
         {
             "name": "constant.numeric",
-            "match": "(?<==)(\\s*[Tt]rue||\\s*[Ff]alse)",
+            "match": "(?<==)(\\s*([Tt]rue|[Ff]alse))",
             "comment": "'True' or 'False' after an equal sign is a boolean."
         },
         {
             "name": "constant.numeric",
-            "match": "\\s*-?[0-9\\.]+E?-?[0-9\\.]*",
+            "match": "(?<=[=,\\s])(\\s*-?[0-9\\.]+E?-?[0-9\\.]*)",
             "comment": "Numeric characters, including scientific notation, is a number."
         },
         {
             "name": "constant.numeric",
-            "match": "(?<==)(\\s*NaN||\\s*Infinity||\\s*None)",
+            "match": "(?<==)(\\s*(NaN|Infinity|None))",
             "comment": "'NaN', 'Infinity', or 'None' after an equal sign is a non-numeric constant."
         },
         {
@@ -46,18 +56,13 @@
             "comment": "Anything else after an equal sign containing alphabetical characters is a string."
         },
         {
-            "name": "variable.parameter",
-            "match": "(?<=\\[)([A-Za-z0-9]*)(?=\\])",
-            "comment": "Alphanumeric characters inside square brackets is a parameter."
-        },
-        {
             "name": "support.function",
             "match": "(?<=:)([A-Za-z0-9]*)",
             "comment": "Alphanumeric characters after a colon is a function."
         },
         {
             "name": "entity.name.class",
-            "match": "[A-Za-z0-9!@%/]*",
+            "match": "[A-Za-z0-9!@%\\*_\\./]*",
             "comment": "Anything else matching these symbols is a class name."
         }
     ]

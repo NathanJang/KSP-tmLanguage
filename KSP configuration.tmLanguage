@@ -22,9 +22,25 @@
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>Alphanumeric characters inside square brackets is a parameter.</string>
+			<key>match</key>
+			<string>(?&lt;=[!\[])([A-Za-z0-9\*]*)(?=\])</string>
+			<key>name</key>
+			<string>variable.parameter</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>These symbols before alphabetical characters are for ModuleManager syntax.</string>
+			<key>match</key>
+			<string>([!@%])(?=[A-Za-z]*)</string>
+			<key>name</key>
+			<string>support.function</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>Anything before an equal sign is a key in the key-value pairs.</string>
 			<key>match</key>
-			<string>([A-Za-z0-9@%_]*\s*)(?==)</string>
+			<string>([A-Za-z0-9@%_,]*\s*)(?=([\*\+])?=)</string>
 			<key>name</key>
 			<string>keyword</string>
 		</dict>
@@ -48,7 +64,7 @@
 			<key>comment</key>
 			<string>'True' or 'False' after an equal sign is a boolean.</string>
 			<key>match</key>
-			<string>(?&lt;==)(\s*[Tt]rue||\s*[Ff]alse)</string>
+			<string>(?&lt;==)(\s*([Tt]rue|[Ff]alse))</string>
 			<key>name</key>
 			<string>constant.numeric</string>
 		</dict>
@@ -56,7 +72,7 @@
 			<key>comment</key>
 			<string>Numeric characters, including scientific notation, is a number.</string>
 			<key>match</key>
-			<string>\s*-?[0-9\.]+E?-?[0-9\.]*</string>
+			<string>(?&lt;=[=,\s])(\s*-?[0-9\.]+E?-?[0-9\.]*)</string>
 			<key>name</key>
 			<string>constant.numeric</string>
 		</dict>
@@ -64,7 +80,7 @@
 			<key>comment</key>
 			<string>'NaN', 'Infinity', or 'None' after an equal sign is a non-numeric constant.</string>
 			<key>match</key>
-			<string>(?&lt;==)(\s*NaN||\s*Infinity||\s*None)</string>
+			<string>(?&lt;==)(\s*(NaN|Infinity|None))</string>
 			<key>name</key>
 			<string>constant.numeric</string>
 		</dict>
@@ -78,14 +94,6 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>Alphanumeric characters inside square brackets is a parameter.</string>
-			<key>match</key>
-			<string>(?&lt;=\[)([A-Za-z0-9]*)(?=\])</string>
-			<key>name</key>
-			<string>variable.parameter</string>
-		</dict>
-		<dict>
-			<key>comment</key>
 			<string>Alphanumeric characters after a colon is a function.</string>
 			<key>match</key>
 			<string>(?&lt;=:)([A-Za-z0-9]*)</string>
@@ -96,7 +104,7 @@
 			<key>comment</key>
 			<string>Anything else matching these symbols is a class name.</string>
 			<key>match</key>
-			<string>[A-Za-z0-9!@%/]*</string>
+			<string>[A-Za-z0-9!@%\*_\./]*</string>
 			<key>name</key>
 			<string>entity.name.class</string>
 		</dict>
