@@ -1,12 +1,21 @@
-KSP-tmLanguage
-==============
+# Kerbal Space Program Configuration Syntax
 
-This is a `.tmLanguage` specification for configuration files in [Kerbal Space Program](https://kerbalspaceprogram.com/), including `persistent.sfs` and `part.cfg` files. I developed this for syntax highlighting when editing these files in [Sublime Text](http://www.sublimetext.com/). I'm also trying to support ModuleManager syntax.
+![Screenshot of persistent.sfs](Screenshot.png)
 
-`KSP configuration.JSON-tmLanguage` is the JSON "source" for the specification, which can be "compiled" into the XML `.tmLanguage` type with [AAAPackageDev](https://github.com/SublimeText/AAAPackageDev). All the work is done in the JSON.
+This is a `.tmLanguage` specification for configuration files in [Kerbal Space Program](https://kerbalspaceprogram.com/), including `persistent.sfs` and `part.cfg` files.
+I developed this for syntax highlighting when editing these files in [Sublime Text](http://www.sublimetext.com/).
 
-To use with Sublime Text select Sublime Text Preferences -> Browse Packages... in Sublime Text, and copy `KSP configuration.tmLanguage` to `Packages/User/`. It is also available under [Package Control](https://sublime.wbond.net/).
+It *mostly* supports ModuleManager syntax:
 
-[Here's how it looks.](http://i.imgur.com/8RN3o4g.png)
+![Screenshot of FerramAerospaceResearch.cfg](Screenshot-ModuleManager.png)
 
-I am quite new to regex so I welcome suggestions. It's far from complete.
+Note: this screenshot contains data from [Ferram-Aerospace-Research](https://github.com/ferram4/Ferram-Aerospace-Research/blob/master/GameData/FerramAerospaceResearch/FerramAerospaceResearch.cfg) by [ferram4](https://github.com/ferram4), licenced under GNU.
+
+`KSP configuration.JSON-tmLanguage` is the JSON "source" for the specification, which can be "compiled" into the XML `.tmLanguage` type with [AAAPackageDev](https://github.com/SublimeText/AAAPackageDev).
+All the work is done in the JSON.
+
+## Installation
+Installation through [Package Control](https://packagecontrol.io/packages/Kerbal%20Space%20Program%20Configuration%20Syntax) is preferred.
+
+## Contributing
+Please [file an issue](https://github.com/NathanJang/KSP-tmLanguage/issues) or fork if you have any suggestions!
