@@ -70,14 +70,6 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>Numeric characters, including scientific notation, is a number.</string>
-			<key>match</key>
-			<string>(?&lt;=[=,\s])(\s*-?[0-9\.]+E?-?[0-9\.]*)</string>
-			<key>name</key>
-			<string>constant.numeric</string>
-		</dict>
-		<dict>
-			<key>comment</key>
 			<string>'NaN', 'Infinity', or 'None' after an equal sign is a non-numeric constant.</string>
 			<key>match</key>
 			<string>(?&lt;==)(\s*(NaN|Infinity|None))</string>
@@ -99,6 +91,14 @@
 			<string>(?&lt;=:)([A-Za-z0-9]*)</string>
 			<key>name</key>
 			<string>support.function</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Numeric characters, including scientific notation, is a number.</string>
+			<key>match</key>
+			<string>(?&lt;=[=,\s])(\s*-?[0-9\.]+E?-?[0-9\.]*)</string>
+			<key>name</key>
+			<string>constant.numeric</string>
 		</dict>
 		<dict>
 			<key>comment</key>

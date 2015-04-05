@@ -42,11 +42,6 @@
         },
         {
             "name": "constant.numeric",
-            "match": "(?<=[=,\\s])(\\s*-?[0-9\\.]+E?-?[0-9\\.]*)",
-            "comment": "Numeric characters, including scientific notation, is a number."
-        },
-        {
-            "name": "constant.numeric",
             "match": "(?<==)(\\s*(NaN|Infinity|None))",
             "comment": "'NaN', 'Infinity', or 'None' after an equal sign is a non-numeric constant."
         },
@@ -59,6 +54,11 @@
             "name": "support.function",
             "match": "(?<=:)([A-Za-z0-9]*)",
             "comment": "Alphanumeric characters after a colon is a function."
+        },
+        {
+            "name": "constant.numeric",
+            "match": "(?<=[=,\\s])(\\s*-?[0-9\\.]+E?-?[0-9\\.]*)",
+            "comment": "Numeric characters, including scientific notation, is a number."
         },
         {
             "name": "entity.name.class",
