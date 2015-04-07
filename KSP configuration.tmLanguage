@@ -18,31 +18,31 @@
 			<key>match</key>
 			<string>//.*</string>
 			<key>name</key>
-			<string>comment</string>
+			<string>comment.ksp.cfg</string>
 		</dict>
 		<dict>
 			<key>comment</key>
 			<string>Alphanumeric characters inside square brackets is a parameter.</string>
 			<key>match</key>
-			<string>(?&lt;=[!\[])([A-Za-z0-9\*]*)(?=\])</string>
+			<string>(?&lt;=[\|\[])([A-Za-z0-9\*_]*)(?=[\]\|])</string>
 			<key>name</key>
-			<string>variable.parameter</string>
+			<string>variable.parameter.ksp.cfg</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>These symbols before alphabetical characters are for ModuleManager syntax.</string>
+			<string>Alphanumeric characters after a colon is a ModuleManager function.</string>
 			<key>match</key>
-			<string>([!@%])(?=[A-Za-z]*)</string>
+			<string>(?&lt;=:)([A-Za-z0-9]*)</string>
 			<key>name</key>
-			<string>support.function</string>
+			<string>support.function.modulemanager.ksp.cfg</string>
 		</dict>
 		<dict>
 			<key>comment</key>
 			<string>Anything before an equal sign is a key in the key-value pairs.</string>
 			<key>match</key>
-			<string>([A-Za-z0-9@%_,]*\s*)(?=([\*\+])?=)</string>
+			<string>([A-Za-z0-9_,]*\s*)(?=([\*\+])?=)</string>
 			<key>name</key>
-			<string>keyword</string>
+			<string>keyword.ksp.cfg</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -50,7 +50,7 @@
 			<key>match</key>
 			<string>(?&lt;==)(\s*[0-9a-f]{32})</string>
 			<key>name</key>
-			<string>constant.numeric</string>
+			<string>constant.numeric.pid.ksp.cfg</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -58,7 +58,7 @@
 			<key>match</key>
 			<string>(?&lt;==)(\s*([a-z0-9]+\-){4}[a-z0-9]+)</string>
 			<key>name</key>
-			<string>constant.numeric</string>
+			<string>constant.numeric.guid.ksp.cfg</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -66,7 +66,7 @@
 			<key>match</key>
 			<string>(?&lt;==)(\s*([Tt]rue|[Ff]alse))</string>
 			<key>name</key>
-			<string>constant.numeric</string>
+			<string>constant.numeric.boolean.ksp.cfg</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -74,7 +74,7 @@
 			<key>match</key>
 			<string>(?&lt;==)(\s*(NaN|Infinity|None))</string>
 			<key>name</key>
-			<string>constant.numeric</string>
+			<string>constant.numeric.nan.ksp.cfg</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -82,35 +82,27 @@
 			<key>match</key>
 			<string>(?&lt;==)(\s?.*[A-Za-z].*)</string>
 			<key>name</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Alphanumeric characters after a colon is a function.</string>
-			<key>match</key>
-			<string>(?&lt;=:)([A-Za-z0-9]*)</string>
-			<key>name</key>
-			<string>support.function</string>
+			<string>string.ksp.cfg</string>
 		</dict>
 		<dict>
 			<key>comment</key>
 			<string>Numeric characters, including scientific notation, is a number.</string>
 			<key>match</key>
-			<string>(?&lt;=[=,\s])(\s*-?[0-9\.]+E?-?[0-9\.]*)</string>
+			<string>(?&lt;=[=,\s\(])(\s*-?[0-9\.]+E?-?[0-9\.]*)</string>
 			<key>name</key>
-			<string>constant.numeric</string>
+			<string>constant.numeric.ksp.cfg</string>
 		</dict>
 		<dict>
 			<key>comment</key>
 			<string>Anything else matching these symbols is a class name.</string>
 			<key>match</key>
-			<string>[A-Za-z0-9!@%\*_\./]*</string>
+			<string>[A-Za-z0-9\*_\./]*</string>
 			<key>name</key>
-			<string>entity.name.class</string>
+			<string>entity.name.class.ksp.cfg</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
-	<string>text.cfg.craft.sfs</string>
+	<string>text.ksp.cfg</string>
 	<key>uuid</key>
 	<string>2e22ffdc-c42e-4308-819d-c125852f1fb7</string>
 </dict>

@@ -1,68 +1,63 @@
 // [PackageDev] target_format: plist, ext: tmLanguage
 {
     "name": "KSP configuration",
-    "scopeName": "text.cfg.craft.sfs",
+    "scopeName": "text.ksp.cfg",
     "fileTypes": ["cfg", "craft", "sfs"],
     "uuid": "2e22ffdc-c42e-4308-819d-c125852f1fb7",
     "patterns": [
         {
-            "name": "comment",
+            "name": "comment.ksp.cfg",
             "match": "//.*",
             "comment": "Anything after 2 slashes is a comment."
         },
         {
-            "name": "variable.parameter",
-            "match": "(?<=[!\\[])([A-Za-z0-9\\*]*)(?=\\])",
+            "name": "variable.parameter.ksp.cfg",
+            "match": "(?<=[\\|\\[])([A-Za-z0-9\\*_]*)(?=[\\]\\|])",
             "comment": "Alphanumeric characters inside square brackets is a parameter."
         },
         {
-            "name": "support.function",
-            "match": "([!@%])(?=[A-Za-z]*)",
-            "comment": "These symbols before alphabetical characters are for ModuleManager syntax."
+            "name": "support.function.modulemanager.ksp.cfg",
+            "match": "(?<=:)([A-Za-z0-9]*)",
+            "comment": "Alphanumeric characters after a colon is a ModuleManager function."
         },
         {
-            "name": "keyword",
-            "match": "([A-Za-z0-9@%_,]*\\s*)(?=([\\*\\+])?=)",
+            "name": "keyword.ksp.cfg",
+            "match": "([A-Za-z0-9_,]*\\s*)(?=([\\*\\+])?=)",
             "comment": "Anything before an equal sign is a key in the key-value pairs."
         },
         {
-            "name": "constant.numeric",
+            "name": "constant.numeric.pid.ksp.cfg",
             "match": "(?<==)(\\s*[0-9a-f]{32})",
             "comment": "32 hexadecimal characters after an equal sign is a pid."
         },
         {
-            "name": "constant.numeric",
+            "name": "constant.numeric.guid.ksp.cfg",
             "match": "(?<==)(\\s*([a-z0-9]+\\-){4}[a-z0-9]+)",
             "comment": "Alphanumeric characters split by 4 hyphens after an equal sign is a guid."
         },
         {
-            "name": "constant.numeric",
+            "name": "constant.numeric.boolean.ksp.cfg",
             "match": "(?<==)(\\s*([Tt]rue|[Ff]alse))",
             "comment": "'True' or 'False' after an equal sign is a boolean."
         },
         {
-            "name": "constant.numeric",
+            "name": "constant.numeric.nan.ksp.cfg",
             "match": "(?<==)(\\s*(NaN|Infinity|None))",
             "comment": "'NaN', 'Infinity', or 'None' after an equal sign is a non-numeric constant."
         },
         {
-            "name": "string",
+            "name": "string.ksp.cfg",
             "match": "(?<==)(\\s?.*[A-Za-z].*)",
             "comment": "Anything else after an equal sign containing alphabetical characters is a string."
         },
         {
-            "name": "support.function",
-            "match": "(?<=:)([A-Za-z0-9]*)",
-            "comment": "Alphanumeric characters after a colon is a function."
-        },
-        {
-            "name": "constant.numeric",
-            "match": "(?<=[=,\\s])(\\s*-?[0-9\\.]+E?-?[0-9\\.]*)",
+            "name": "constant.numeric.ksp.cfg",
+            "match": "(?<=[=,\\s\\(])(\\s*-?[0-9\\.]+E?-?[0-9\\.]*)",
             "comment": "Numeric characters, including scientific notation, is a number."
         },
         {
-            "name": "entity.name.class",
-            "match": "[A-Za-z0-9!@%\\*_\\./]*",
+            "name": "entity.name.class.ksp.cfg",
+            "match": "[A-Za-z0-9\\*_\\./]*",
             "comment": "Anything else matching these symbols is a class name."
         }
     ]
