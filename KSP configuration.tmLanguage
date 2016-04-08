@@ -16,7 +16,7 @@
 			<key>comment</key>
 			<string>Anything after 2 slashes is a comment.</string>
 			<key>match</key>
-			<string>//.*</string>
+			<string>\s*((//).*$\n?)</string>
 			<key>name</key>
 			<string>comment.ksp.cfg</string>
 		</dict>

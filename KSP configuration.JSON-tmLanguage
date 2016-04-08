@@ -7,7 +7,7 @@
     "patterns": [
         {
             "name": "comment.ksp.cfg",
-            "match": "//.*",
+            "match": "\s*((//).*$\n?)",
             "comment": "Anything after 2 slashes is a comment."
         },
         {
